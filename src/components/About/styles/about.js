@@ -22,8 +22,6 @@ export const Content = styled.div`
 `;
 
 export const Header = styled.h2`
-  display: flex;
-  justify-content: space-between;
   margin: 0;
   font-size: 1.5rem;
   font-weight: 400;

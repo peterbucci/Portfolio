@@ -9,9 +9,9 @@ const AboutLayout = forwardRef(({ children, height, contentHeight }, ref) => {
   );
 });
 
-AboutLayout.Header = ({ children, onClick }) => {
-  return <Header onClick={onClick}>{children}</Header>;
-};
+AboutLayout.Header = forwardRef((props, ref) => {
+  return <Header ref={(el) => (ref.current[0] = el)} {...props} />;
+});
 
 AboutLayout.Bio = ({ bio }) => {
   return (

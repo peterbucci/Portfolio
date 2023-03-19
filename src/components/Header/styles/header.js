@@ -64,7 +64,13 @@ export const NavLink = styled(Link)`
   all: unset;
   padding: 10px 20px;
   font-family: "Roboto Mono", monospace;
-  transition: transform 0.2s ease-in-out;
+  ${({ current }) =>
+    current &&
+    `
+    color: rgba(${colors.paletteFour.join(", ")}, 1);
+    transform: scale(1.1);
+  `};
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
   cursor: pointer;
   &:hover {
     color: ${`rgba(${colors.paletteFour.join(", ")}, 1)`};
@@ -76,6 +82,7 @@ export const NavIcon = styled.div`
   color: #fff;
   -webkit-filter: drop-shadow(1px 1px rgba(0, 0, 0, 0.7));
   filter: drop-shadow(1px 1px rgba(0, 0, 0, 0.7));
+  cursor: pointer;
   &:hover {
     color: ${`rgba(${colors.paletteFour.join(", ")}, 1)`};
   }

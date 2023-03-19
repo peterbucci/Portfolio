@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import Background from "./components/Background";
-import Header from "./components/Header";
-import useWindowDimensions from "./hooks/use_window_dimensions";
 import { useLocation } from "react-router-dom";
 import Home from "./pages/Home";
-import useScrollToNavigate from "./hooks/use_scroll_to_navigate";
 import About from "./pages/About";
-import Portfolio from "./pages/Skills";
+import Portfolio from "./pages/Portfolio";
+import Background from "./components/Background";
+import Header from "./components/Header";
+import useScrollToNavigate from "./hooks/use_scroll_to_navigate";
+import useWindowDimensions from "./hooks/use_window_dimensions";
 
 function App() {
   const location = useLocation();
@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div id="App">
-      <Header width={width} height={height} />
+      <Header width={width} height={height} location={location.pathname} />
       <Home />
       <About />
       <Portfolio />

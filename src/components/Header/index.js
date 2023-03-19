@@ -8,8 +8,7 @@ import {
   InneWrapper,
 } from "./styles/header";
 
-export default function Header({ width, height }) {
-  console.log(height);
+export default function Header({ width, height, location }) {
   return (
     <Menu height={height}>
       <InneWrapper>
@@ -21,11 +20,33 @@ export default function Header({ width, height }) {
         <Navigation>
           {width >= 600 && height > 400 ? (
             <>
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/about">About</NavLink>
-              <NavLink to="/portfolio">Portfolio</NavLink>
-              <NavLink to="/blog">Blog</NavLink>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink current={location === "/" ? "true" : null} to="/">
+                Home
+              </NavLink>
+              <NavLink
+                current={location === "/about" ? "true" : null}
+                to="/about"
+              >
+                About
+              </NavLink>
+              <NavLink
+                current={location === "/portfolio" ? "true" : null}
+                to="/portfolio"
+              >
+                Portfolio
+              </NavLink>
+              <NavLink
+                current={location === "/blog" ? "true" : null}
+                to="/blog"
+              >
+                Blog
+              </NavLink>
+              <NavLink
+                current={location === "/contact" ? "true" : null}
+                to="/contact"
+              >
+                Contact
+              </NavLink>
             </>
           ) : (
             <NavIcon>

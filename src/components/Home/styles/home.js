@@ -65,7 +65,9 @@ export const LearnMore = styled(Link)`
 export const RightArrow = styled.span`
   position: relative;
   display: flex;
+  align-item: center;
   margin-left: 10px;
+  width: 1rem;
   -webkit-filter: drop-shadow(1px 1px rgba(0, 0, 0, 0.7));
   filter: drop-shadow(1px 1px rgba(0, 0, 0, 0.7));
   animation: ${bounce} 1s ease-in-out infinite;
