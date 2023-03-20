@@ -17,7 +17,6 @@ export default function useTextScramble(phraseGroups, refArr) {
   }, []);
 
   useEffect(() => {
-    const scramble = scrambleRef.current;
     if (initialRenderRef.current) {
       initialRenderRef.current = false;
       scrambleRef.current = phraseGroups.map((phrases, i) => ({
@@ -25,12 +24,10 @@ export default function useTextScramble(phraseGroups, refArr) {
         phrases,
       }));
     }
-    console.log(scrambleRef, refArr, scramble);
-    if (scramble)
-      scramble.forEach(({ fx, phrases }) => {
-        let counter = 0;
-        next(fx, phrases, counter, randomIntFromInterval(5000, 15000));
-      });
+    scrambleRef.current.forEach(({ fx, phrases }) => {
+      let counter = 0;
+      next(fx, phrases, counter, randomIntFromInterval(5000, 15000));
+    });
   }, [phraseGroups, next, refArr]);
 
   return null;

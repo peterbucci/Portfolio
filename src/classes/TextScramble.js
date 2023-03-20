@@ -39,7 +39,6 @@ export default class TextScramble {
         output += from;
       }
     }
-    console.log(this.el);
     this.el.innerHTML = output;
     if (complete === this.queue.length) {
       this.resolve();
