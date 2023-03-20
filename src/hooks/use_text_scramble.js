@@ -25,7 +25,7 @@ export default function useTextScramble(phraseGroups, refArr) {
         phrases,
       }));
     }
-    console.log(scrambleRef, refArr);
+    console.log(scrambleRef, refArr, scramble);
     if (scramble)
       scramble.forEach(({ fx, phrases }) => {
         let counter = 0;
